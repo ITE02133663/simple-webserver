@@ -125,7 +125,7 @@ void web(int fd, int hit)
 
 	if(( file_fd = open(&buffer[5],O_RDONLY)) == -1) 
 		log(SORRY, "404 Error",&buffer[5],fd);
-		(void)sprintf(buffer,"HTT[/1.0 404 Error\r\nContent-Type: %s\r\n\r\n", fstr);
+		(void)sprintf(buffer,"HTTP/1.0 404 Error\r\nContent-Type: %s\r\n\r\n", fstr);
 
 	log(LOG,"SEND",&buffer[5],hit);
 
